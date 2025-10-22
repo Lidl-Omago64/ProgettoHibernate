@@ -21,6 +21,10 @@
 
         <!-- Classi entity -->
         <mapping class="org.example.model.User"/>
+        <mapping class="org.example.model.tag.Tag"/>
+        <mapping class="org.example.model.transaction.Transaction"/>
+        <mapping class="org.example.model.transaction.NormalTransaction"/>
+        <mapping class="org.example.model.transaction.DeadlineTransaction"/>
 
     </session-factory>
 </hibernate-configuration>
