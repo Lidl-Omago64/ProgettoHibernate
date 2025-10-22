@@ -16,11 +16,10 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation(libs.junit)
-
-    // This dependency is used by the application.
-    implementation(libs.guava)
+    implementation("org.hibernate.orm:hibernate-core:6.4.1.Final")
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+    implementation(kotlin("stdlib"))
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
