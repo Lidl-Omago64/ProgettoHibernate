@@ -1,7 +1,7 @@
 package org.example.model.transaction;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.model.tag.Tag;
@@ -9,16 +9,25 @@ import org.example.model.tag.Tag;
 import java.util.Date;
 import java.util.Set;
 
-@Entity
+
 @Getter
 @Setter
-
+@Inheritance(strategy = InheritanceType.JOINED)
+@Entity
 public abstract class Transaction {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private double amount;
+    private Double amount;
     private String description;
     private Date date;
+    @ManyToMany
+    @JoinTable(
+            name = "transaction_tag",
+            joinColumns = @JoinColumn(name = "transaction_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
     private Set<Tag> tag;
-
 
 }
