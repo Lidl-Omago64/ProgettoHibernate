@@ -1,31 +1,26 @@
 package org.example;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.example.model.User;
+import java.util.List;
 
 public class App {
 
     public static void main(String[] args) {
         System.out.println("🚀 Avvio test Hibernate...");
 
-        try (var sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory()) {
-            Session session = sessionFactory.openSession();
-            Transaction transaction = session.beginTransaction();
+        UserService userService = new UserService();
 
-            User user = new User();
-            user.setName("Mario Rossi");
-            user.setEmail("mario.rossi@example.com");
+        // 🔹 Aggiunge un nuovo utente
+        userService.saveUser("Mario Rossi", "mario.rossi@example.com");
 
-            session.persist(user);
-            transaction.commit();
-            session.close();
+        // 🔹 Legge e mostra tutti gli utenti dal DB
+        List<User> utenti = userService.getAllUsers();
 
-            System.out.println("✅ Hibernate ha salvato l'utente con successo!");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("❌ Errore durante il test di Hibernate");
+        System.out.println("📋 Utenti trovati nel database:");
+        for (User u : utenti) {
+            System.out.println(" - ID: " + u.getId() + " | Nome: " + u.getName() + " | Email: " + u.getEmail());
         }
+
+        System.out.println("✅ Fine test Hibernate");
     }
 }
