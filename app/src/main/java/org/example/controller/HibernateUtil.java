@@ -4,7 +4,7 @@ package org.example.controller;
 import org.hibernate.SessionFactory;
 
 public class HibernateUtil {
-    private static SessionFactory session = connect();
+    private static SessionFactory session; //= connect();
 
     private HibernateUtil() {}
 
@@ -12,10 +12,10 @@ public class HibernateUtil {
         return session;
     }
 
-    private static SessionFactory connect() {
+    /*private static SessionFactory connect() {
         try{
 
 
         }
-    }
+    }*/
 }
