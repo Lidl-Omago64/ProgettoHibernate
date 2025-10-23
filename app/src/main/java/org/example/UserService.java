@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.controller.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
@@ -9,8 +10,9 @@ import java.util.List;
 
 public class UserService {
 
+
     private static final org.hibernate.SessionFactory sessionFactory =
-            new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            HibernateUtil.getSession();
 
     // ✅ Salva un nuovo utente nel database
     public void saveUser(String name, String email) {
