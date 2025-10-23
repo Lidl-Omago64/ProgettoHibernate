@@ -5,12 +5,14 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!-- Connessione SQLite -->
-        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:database.db</property>
+        <!-- Connessione PostgreSQL -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mydb</property>
+        <property name="hibernate.connection.username">myuser</property>
+        <property name="hibernate.connection.password">mypassword</property>
 
-        <!-- Dialect per SQLite -->
-        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+        <!-- Dialect per PostgreSQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 
         <!-- Mostra SQL nella console -->
         <property name="hibernate.show_sql">true</property>

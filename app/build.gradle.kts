@@ -21,6 +21,9 @@ dependencies {
     implementation("org.xerial:sqlite-jdbc:3.46.0.0")
     implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 
+    implementation("org.postgresql:postgresql:42.7.4")
+
+
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")
 
