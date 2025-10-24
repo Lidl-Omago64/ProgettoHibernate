@@ -21,6 +21,9 @@ dependencies {
     implementation("org.xerial:sqlite-jdbc:3.46.0.0")
     implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 
+    // Driver H2
+    implementation("com.h2database:h2:2.2.224")
+
     compileOnly("org.projectlombok:lombok:1.18.42")
     annotationProcessor("org.projectlombok:lombok:1.18.42")
 
