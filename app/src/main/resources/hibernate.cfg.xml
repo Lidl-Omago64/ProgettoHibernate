@@ -5,12 +5,15 @@
 <hibernate-configuration>
     <session-factory>
 
-        <!-- Connessione SQLite -->
-        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
-        <property name="hibernate.connection.url">jdbc:sqlite:database.db</property>
+        <!-- Connessione H2 (file locale) -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1</property>
 
-        <!-- Dialect per SQLite -->
-        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Dialect per H2 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
 
         <!-- Mostra SQL nella console -->
         <property name="hibernate.show_sql">true</property>
