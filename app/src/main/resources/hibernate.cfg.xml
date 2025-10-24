@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connessione SQLite -->
+        <property name="hibernate.connection.driver_class">org.sqlite.JDBC</property>
+        <property name="hibernate.connection.url">jdbc:sqlite:database.db</property>
+
+        <!-- Dialect per SQLite -->
+        <property name="hibernate.dialect">org.hibernate.community.dialect.SQLiteDialect</property>
+
+        <!-- Mostra SQL nella console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Aggiorna schema automaticamente -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Classi entity -->
+        <mapping class="org.example.model.User"/>
+        <mapping class="org.example.model.tag.Tag"/>
+        <mapping class="org.example.model.transaction.Transaction"/>
+        <mapping class="org.example.model.transaction.NormalTransaction"/>
+        <mapping class="org.example.model.transaction.DeadlineTransaction"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -16,11 +16,16 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation(libs.junit)
+    implementation("org.hibernate.orm:hibernate-core:6.4.1.Final")
+    implementation("org.hibernate.orm:hibernate-community-dialects:6.4.1.Final")
+    implementation("org.xerial:sqlite-jdbc:3.46.0.0")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 
-    // This dependency is used by the application.
-    implementation(libs.guava)
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
+
+    testCompileOnly("org.projectlombok:lombok:1.18.42")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.42")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
