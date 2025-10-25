@@ -1,14 +1,27 @@
 package org.example.model.statistics;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 
-@Entity
-public class ExtendedStatistics {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.time.LocalDate;
+
+
+@ToString
+@Getter
+@Setter
+public class ExtendedStatistics implements Statistics<LocalDate> {
+
+    private LocalDate dateStart;
+
+    private LocalDate dateEnd;
+
+    public ExtendedStatistics() {}
+
+    public ExtendedStatistics(LocalDate dateStart, LocalDate dateEnd) {
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+    }
 
 }
