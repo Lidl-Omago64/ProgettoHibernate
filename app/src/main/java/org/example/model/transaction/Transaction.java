@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.model.tag.Tag;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,7 +22,7 @@ public abstract class Transaction {
     private int id;
     private Double amount;
     private String description;
-    private Date date;
+    private LocalDate date;
     @ManyToMany
     @JoinTable(
             name = "transaction_tag",
