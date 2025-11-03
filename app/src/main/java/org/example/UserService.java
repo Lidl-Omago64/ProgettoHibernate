@@ -1,9 +1,8 @@
 package org.example;
 
-import org.example.controller.HibernateUtil;
+import org.example.repository.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.example.model.User;
 
 import java.util.List;

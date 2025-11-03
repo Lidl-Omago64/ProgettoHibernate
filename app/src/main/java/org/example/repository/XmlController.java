@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.repository;
 
 import org.w3c.dom.Document;
 

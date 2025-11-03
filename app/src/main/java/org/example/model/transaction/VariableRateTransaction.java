@@ -1,7 +1,6 @@
 package org.example.model.transaction;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +8,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class VariableRateTransaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     @Column(nullable = false)
     private double baseAmount;
     @Column(nullable = false)

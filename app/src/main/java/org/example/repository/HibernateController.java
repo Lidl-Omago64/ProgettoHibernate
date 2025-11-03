@@ -1,10 +1,12 @@
-package org.example.controller;
+package org.example.repository;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 public class HibernateController<T> implements HibernateControllerInterface<T> {
     private final Class<T> entityClass;

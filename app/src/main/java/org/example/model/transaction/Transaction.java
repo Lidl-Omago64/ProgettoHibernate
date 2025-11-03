@@ -15,7 +15,7 @@ import java.util.Set;
 @Setter
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
-public abstract class Transaction {
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,7 +23,7 @@ public abstract class Transaction {
     private Double amount;
     private String description;
     private LocalDate date;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "transaction_tag",
             joinColumns = @JoinColumn(name = "transaction_id"),
